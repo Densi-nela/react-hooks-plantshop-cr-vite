@@ -13,7 +13,7 @@ function NewPlantForm({handleAddPlant}) {
 
     const newPlant = { name, image, price};
 
-        fetch("http://localhost:6001/plants", {
+        globalThis.fetch("http://localhost:6001/plants", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(newPlant),
@@ -25,7 +25,7 @@ function NewPlantForm({handleAddPlant}) {
     setImage("");
     setPrice("");
   })
-  .catch((err) => console.log("POST error:", err)); // ✅ add this
+  .catch((err) => console.log("POST error:", err)); 
 
   }
 
